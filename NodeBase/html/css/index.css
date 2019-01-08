@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0px; margin:0px;}
+html {_overflow-y:scroll;}
+/*****！！页面通用css样式定义开始******/
+/* body的css定义:这里定义页面上下左右边距，页面背景颜色，滚动条颜色样式 */
+body{
+  font-family: Arial, Tahoma, "Microsoft YaHei";    /*文字字体定义 */
+  font-size: 12px;    /*文字大小定义 */
+  color: #333333; /*文字颜色定义 */
+}
+
+/* 网站超链接css通用设置 */
+a{text-decoration: none; cursor: pointer; } /* 链接无下划线,有为underline */ 
+a:link {color: #333333;} /* 未访问的链接 */
+a:visited {color: #333333;} /* 已访问的链接 */
+a:hover{color: #333333;} /* 鼠标在链接上 */ 
+a:active {color: #333333;} /* 点击激活链接 */
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal;}
+img{border: 0px;}
+.clear{clear:both; line-height:0; height:0; font-size:0px;}
+.clear:after{content: "."; display: block; height: 0; clear: both; visibility: hidden; }/*清除浮动*/
+
+/*表格样式定义 */ 
+checkbox{border: 0px;}/*选择框样式定义 */
+p{margin:0; padding:0;}/*文字按钮样式定义 */
+/*其它 */ 
+li{list-style-type: none;}
+em,i{font-style:normal;}
+::-webkit-input-placeholder{color: #000;letter-spacing: -1px;} /* Safari,Google Chrome, Opera15+ */
+:-moz-placeholder{color: #000;letter-spacing: -1px;} /* Mozilla Firefox 4-18 */
+::-moz-placeholder{color: #000;letter-spacing: -1px;} /* Mozilla Firefox 19+ */
+:-ms-input-placeholder{color: #000;letter-spacing: -1px;} /* IE10 */
+
+/******* 用户登录开始 *******/
+.header{background-color: #ffffff;}
+.logoWrap{max-width: 1440px;min-width: 1280px;height: 70px;margin: auto;}
+.logoWrap>img{float: left;}
+.nav{width: 1000px;margin: auto;}
+.nav li{float: left;}
+.nav li a{display: block;width: 60px;margin: 18px 15px 0 34px;line-height: 2;font-size: 14px;text-align: center;border-bottom: 1px solid #dcdcdc;color: #555555;}
+.rightbar{float: right;margin: 25px 45px 0 0;}
+.rightbar li{float: left;}
+.rightbar li a{display: block;padding: 0 12px;border-right: 1px solid #c8c8c8;}
+.rightbar li a img{display: block;width: 31px;height: 22px;}
+.loginBg{position: absolute;top: 70px;bottom: 0;left: 0;right: 0;background: url(../img/login_bg.jpg) no-repeat center center;background-size: cover;}
+.loginWrap{position: relative;height: 100%;width: 1000px;margin: auto;}
+.login_form{position: absolute;top: 50%;right: 0;margin-top: -150px;width: 320px;height: 300px;padding: 0 40px;border-radius: 4px;background-color: #ffffff;box-shadow: 0 0 24px 5px rgba(0,0,0,.25);}
+.login_form h3{margin: 2px 0 1px;font-size: 16px;line-height: 4;text-align: center;}
+.login_form input{display: block;margin-bottom: 15px;padding-left: 0.25em;width: 100%;height: 46px;line-height: 46px;font-size: 16px;border: 1px solid #dddddd;}
+.login_form button{display: block;margin-bottom: 15px;width: 100%;height: 48px;line-height: 48px;font-size: 16px;text-align: center;background-color: #3e8dea;border: none;border-radius: 3px;color: #ffffff;}
+.form_input input{float: left;width: 178px;}
+.form_input button{float: right;width: 120px;}
+.login_actions a{line-height: 1;font-size: 14px;text-decoration: underline;color: #666666;}
+.login_actions a:last-child{float: right;}
+/******* 用户登录结束 *******/
+
+/******* 用户首页开始 *******/
+.userMenu{height: 90px;background-color: #3e8dea;color: #ffffff;}
+.wrap{width: 1200px;margin: auto;overflow: hidden;}
+.user{float: left;width: 120px;height: 60px;padding-top: 30px;line-height: 1.5;text-align: center;background-color: #314d81;}
+.user a{text-decoration: underline;color: #ffffff;}
+.user span{margin: 0 3px;}
+.userMenu ul{float: left;}
+.userMenu ul li{float: left;}
+.userMenu ul li a{position: relative;display: block;padding: 0 24px;line-height: 90px;font-size: 14px;color: #ffffff;}
+.userMenu ul li a.active:after{content: '';position: absolute;bottom: 0;left: 50%;margin-left: -10px;border-width: 10px;border-style: solid;border-color: #3e8dea #3e8dea #ffffff #3e8dea;}
+.content{float: left;width: 800px;margin-bottom: 25px;}
+.sider{float: right;width: 375px;margin-bottom: 25px;}
+.content>div,.sider>div{margin-top: 25px;}
+.myloan{border-width: 1px 1px 0 1px;border-style: solid;border-color: #e4eaee;}
+.myloan h3{height: 48px;padding-left: 12px;font-size: 16px;line-height: 3;border-bottom: 1px solid #e4eaee;background-color: #f5f8fa;color: #546d7e;}
+.myloan ul li{padding: 10px 28px 11px 11px;border-bottom: 1px solid #e4eaee;overflow: hidden;}
+.myloan ul li img{float: left;width: 110px;height: 67px;margin-right: 22px;}
+.myloan ul li>div{float: left;line-height: 14px;}
+.loanName{margin: 3px 0 5px;font-size: 14px;color: #4b4b4b;}
+.loanName a{text-decoration: underline;color: #546d7e;}
+.loanName span{font-size: 12px;}
+.loanName+p{margin-bottom: 13px;color: #546d7e;}
+.loanName+p span{margin-right: 46px;}
+.loanState{color: #cccccc;}
+.loanState span{margin-right: 10px;font-size: 14px;color: #ff0000;}
+.myloan ul li>a{float: right;width: 70px; height: 24px;margin-top: 18px;line-height: 24px;text-align: center;border: 1px solid #d1d1d1;border-radius: 2px;color: #546d7e;}
+.message{position: relative;padding: 30px 20px 32px;line-height: 18px;border: 1px solid #fbb900;background-color: #fefae6;color: #75441d;}
+.message span{position: absolute;top: 0;right: 0;width: 62px;height: 24px;padding-left: 4px;line-height: 2;background-color: #fbb900;}
+.message span::before{content: '';position: absolute;left: -12px;border-width: 12px 6px 12px 6px;border-style: solid;border-color: #fefae6 #fbb900 #fbb900 #fefae6;}
+.message strong{margin: 0 3px 0 5px;}
+.message a{text-decoration: underline;color: #ff0000;}
+.calendar h3{height: 42px;line-height: 42px;font-size: 16px;text-align: center;background-color: #6ec884;color: #ffffff;}
+.date{padding: 42px 0;line-height: 1;text-align: center;background-color: #f8fffa;color: #55b46c;border-left: 1px solid #cfe5d4;border-right: 1px solid #cfe5d4;}
+.date span{font-size: 38px;}
+.date p{margin: 20px 0 10px;font-size: 14px;}
+.latestProd{padding-bottom: 30px;line-height: 1;border-width: 1px;border-style: solid;border-color:#e4eaee #cfe5d4 #cfe5d4 #cfe5d4;}
+.latestProd h6{margin: 13px 0 0 13px;font-size: 16px;color: #555555;}
+.latestProd ul{margin: 33px 20px 0;overflow: hidden;}
+.latestProd ul li{float: left;width: 33.33%;}
+.latestProd ul li a{display: block;text-align: center;color: #555555;}
+.latestProd ul li a img{display: block;margin: auto;width: 38px;height: 38px;border: 1px solid #6ec884;}
+.latestProd ul li a p{margin: 9px 0;font-size: 14px;color: #000000;}
+/******* 用户首页结束 *******/
+
+/******* 我的贷款明细开始 *******/
+.loanStep{position: relative;margin: 25px 0 16px 91px;width: 964px;line-height: 24px;font-size: 14px;color: #999999;}
+.progress{position: absolute;top: 41px;left: 73px;width: 816px;height: 9px;border-top: 1px solid #cbcbcb;background-color: #dbdbdb;}
+.progress::after{content: '';position: absolute;top: 2px;width: 816px;height: 4px;background-color: #00954a;}
+.loanStep ul{overflow: hidden;}
+.loanStep ul li{float: left;width: 128px;margin-right: 81px;text-align: center;}
+.loanStep ul li:last-child{margin-right: 0;}
+.loanStep ul li strong{color: #666666;}
+.loanStep ul li div{position: relative;width: 32px;height: 32px;margin: 4px auto 25px;border: 1px solid #cccccc;border-radius: 50%;background-color: #dbdbdb;}
+.loanStep ul li div:before{content: '';position: absolute;top: 4px;left: 4px;width: 24px;height: 24px;border-radius: 50%;background-image: url(../img/question.png);}
+.loanStep ul li div.done::before{background-image: url(../img/check.png);background-color: #00954a;}
+.doing::before{background-color: #00954a;}
+.myloan h3.orderTitle{color: #333333;}
+.applyOrder{line-height: 24px;font-size: 14px;border-bottom: 1px solid #e4eaee;overflow: hidden;}
+.orderInfo{float: left;width: 284px;height: 119px;padding: 20px 0 0 14px;border-right: 1px solid #e4eaee;background-color: #fafafa;}
+.orderInfo p{margin-bottom: 11px;}
+.orderState{float: left;padding: 20px 0 0 20px;}
+.orderState span{font-size: 16px;font-weight: bold;}
+.orderState span strong{color: #000000;}
+.orderState p{margin: 6px 0 18px;font-size: 12px;font-weight: bold;color: #999999;}
+.orderState a{display: inline-block;width: 70px;height: 24px;margin-left: 25px;font-weight: bold;text-align: center;border: 1px solid #cccccc;border-radius: 2px;color: #333333;}
+.loanProd{margin: 23px 0 0 8px;font-size: 14px;color: #555555;}
+.loanProd span:first-child{text-decoration: underline;}
+.loanProd span:not(:last-child){margin-right: 50px;}
+/******* 我的贷款明细结束 *******/
+
+/******* 我的客服开始 *******/
+.myloan .contact:last-child{margin-bottom: 45px;}
+.contact{padding: 15px 0 19px 44px;line-height: 1;font-size: 14px;border-bottom: 1px solid #daf3ff;color: #666666;overflow: hidden;}
+.contact a{float: left;width: 104px;padding: 13px 0 12px 46px;font-weight: bold;background-image: url(../img/qq.png);color: #ddffff;}
+.contact span{float: left;margin: 16px 0 0 38px;}
+/******* 我的客服结束 *******/
