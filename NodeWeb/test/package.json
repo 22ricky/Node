@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Node Web 服务",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Web",
+    "API"
+  ],
+  "author": "ricky",
+  "license": "ISC",
+  "devDependencies": {
+    "mysql": "^2.16.0"
+  }
+}

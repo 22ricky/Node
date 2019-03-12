@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>金融平台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+  <script src="js/jquery-2.1.0.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logoWrap">
+      <img src="img/logo.jpg" />
+      <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="product.html">产品</a></li>
+      </ul>
+      <ul class="rightbar">
+        <li><a href=""><img src="img/header_contact.jpg" /></a></li>
+        <li><a href=""><img src="img/header_notice.jpg" /></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="userMenu">
+    <div class="wrap">
+      <div class="user">
+        <p>13616174009</p>
+        <p>
+          <a class="password">修改密码</a>
+          <span>|</span>
+          <a href="login.html">退出</a>
+        </p>
+      </div>
+      <ul>
+        <li><a href="user.html">用户中心</a></li>
+        <li><a class="active" href="loan.html">我的贷款</a></li>
+        <li><a href="certification.html">我的认证</a></li>
+        <li><a href="information.html">我的信息</a></li>
+        <li><a href="customer.html">我的客服</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="content">
+      <div class="myloan">
+        <h3>我的贷款</h3>
+        <ul class="loanList">
+          <li>
+            <img src="img/user_loan.jpg" />
+            <div>
+              <div class="loanName">
+                <a href="loandetail.html">金融贷<span>[中国工商银行]</span></a>
+              </div>
+              <p><span>金额：20W</span><span>月利息：4.35%</span><span>还款期限：12个月</span></p>
+              <div class="loanState">
+                <span>申请中</span>2018-11-04 19:56:21
+              </div>
+            </div>
+            <a href="loandetail.html">查看进度</a>
+          </li>
+          <li>
+            <img src="img/user_loan.jpg" />
+            <div>
+              <div class="loanName">
+                <a href="loandetail.html">金融贷<span>[中国工商银行]</span></a>
+              </div>
+              <p><span>金额：20W</span><span>月利息：4.35%</span><span>还款期限：12个月</span></p>
+              <div class="loanState">
+                <span>申请中</span>2018-11-04 19:56:21
+              </div>
+            </div>
+            <a href="loandetail.html">查看进度</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sider">
+      <div class="message">
+        <span>系统消息</span>
+        由<strong>中国工商银行</strong>发行的最新个人贷款产品《小额企业贷》已经上线。
+        <a href="loandetail.html">点击查看详情</a>
+      </div>
+      <div class="calendar">
+        <h3>我的日历</h3>
+        <div class="date">
+          <span>07</span>
+          <p>星期三</p>
+          2018.11
+        </div>
+        <div class="latestProd">
+          <h6>最新产品</h6>
+          <ul>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 修改密码 -->
+  <div class="mask passwordModal">
+    <div class="modal">
+      <h3>修改密码<i></i></h3>
+      <div class="modalBody">
+        <ul class="formList">
+          <li><label>旧密码</label><input type="password" placeholder="请输入旧密码" /></li>
+          <li><label>新密码</label><input type="password" placeholder="请输入新密码" /></li>
+        </ul>
+      </div>
+      <a>确定</a>
+    </div>
+  </div>
+  
+  <div class="footer_user">
+    <div class="copyright">Copyright 2018 ** All right reserved</div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // 修改密码
+      $('.password').click(function() {
+        $('.passwordModal').show();
+        $('.passwordModal a').click(function() {
+          $('.passwordModal').hide();
+        });
+      });
+      $('.mask i').click(function() {
+        $('.mask').hide();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>金融平台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+  <script src="js/jquery-2.1.0.min.js"></script>
+  <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+  <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logoWrap">
+      <img src="img/logo.jpg" />
+      <ul class="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="product.html">产品</a></li>
+      </ul>
+      <ul class="rightbar">
+        <li><a href=""><img src="img/header_contact.jpg" /></a></li>
+        <li><a href=""><img src="img/header_notice.jpg" /></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="userMenu">
+    <div class="wrap">
+      <div class="user">
+        <p>13616174009</p>
+        <p>
+          <a class="password">修改密码</a>
+          <span>|</span>
+          <a href="login.html">退出</a>
+        </p>
+      </div>
+      <ul>
+        <li><a href="user.html">用户中心</a></li>
+        <li><a href="loan.html">我的贷款</a></li>
+        <li><a class="active" href="certification.html">我的认证</a></li>
+        <li><a href="information.html">我的信息</a></li>
+        <li><a href="customer.html">我的客服</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="content">
+      <div class="myloan">
+        <h3>个人认证<span>注：请您如实填写，一经保存，不可更改</span></h3>
+        <div class="personal">
+          <ul class="certification">
+            <li>
+              <div class="status">
+                <img src="img/done.jpg" />
+                已完成
+              </div>
+              <div class="formField">
+                <label>真实姓名</label>
+                <input class="input_s" type="text" />
+              </div>
+            </li>
+            <li>
+              <div class="status">
+                <img src="img/doing.jpg" />
+                未认证
+              </div>
+              <div class="formField">
+                <label>性别</label>
+                <span><input type="radio" name="gender" value="男"><i>男</i></span>
+                <span><input checked type="radio" name="gender" value="女"><i>女</i></span>
+              </div>
+            </li>
+            <li>
+              <div class="status">
+                <img src="img/doing.jpg" />
+                未认证
+              </div>
+              <div class="formField">
+                <label>证件号</label>
+                <select>
+                  <option value="">居民身份证</option>
+                </select>
+                <input class="input_m" type="text" />
+              </div>
+            </li>
+            <li>
+              <div class="status">
+                <img src="img/doing.jpg" />
+                未认证
+              </div>
+              <div class="formField">
+                <label>证件照</label>
+                <span>
+                  <img src="img/idcard.jpg" class="formError" />
+                  <input type="file" />
+                </span>
+                <span>
+                  <img src="img/idcard.jpg" />
+                  <input type="file" />
+                </span>
+                <i>注：请上传证件正反照片</i>
+              </div>
+            </li>
+          </ul>
+          <a>保存</a>
+        </div>
+      </div>
+
+      <div class="myloan">
+        <h3>企业认证<a>添加</a></h3>
+        <div class="enterprise">
+          <ul class="certification">
+            <li>
+              <div class="title">
+                <span>无锡百晓信息科技有限公司</span><strong>【已认证】</strong>
+                <p><a>删除</a><i>|</i><a>修改</a></p>
+                <p><a>返回</a><i>|</i><a>保存</a></p>
+              </div>
+              <ul>
+                <li>
+                  <div class="status">
+                    <img src="img/done.jpg" />
+                    已完成
+                  </div>
+                  <div class="formField">
+                    <label>企业名称</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业注册时间</label>
+                    <input class="input_s" type="date" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>您的职业</label>
+                    <select>
+                      <option value="">法人</option>
+                      <option value="">大股东</option>
+                      <option value="">二股东</option>
+                      <option value="">三股东</option>
+                      <option value="">其他</option>
+                    </select>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业执照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <i>注：请上传企业执照</i>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业经营地址</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业门面</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业法人</label>
+                    <input class="input_xs" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人证件</label>
+                    <select>
+                      <option value="">居民身份证</option>
+                    </select>
+                    <input class="input_m" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人证件照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人联系方式</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业联系人</label>
+                    <input class="input_xs" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系人证件</label>
+                    <select>
+                      <option value="">居民身份证</option>
+                    </select>
+                    <input class="input_m" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系人证件照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系方式</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业开户行</label>
+                    <input class="input_l" type="text" placeholder="请输入企业开户行，具体到支行" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业开户帐号</label>
+                    <input class="input_l" type="text" placeholder="请输入卡号" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>近一年企业销售额/开票金额</label>
+                    <input class="input_xs" type="text" />
+                    <label>万元</label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="new">
+              <div class="title">
+                <span>新建企业</span>
+                <p><a>删除</a><i>|</i><a>修改</a></p>
+                <p><a>返回</a><i>|</i><a>保存</a></p>
+              </div>
+              <ul>
+                <li>
+                  <div class="status">
+                    <img src="img/done.jpg" />
+                    已完成
+                  </div>
+                  <div class="formField">
+                    <label>企业名称</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业注册时间</label>
+                    <input class="input_s" type="date" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>您的职业</label>
+                    <select>
+                      <option value="">法人</option>
+                      <option value="">大股东</option>
+                      <option value="">二股东</option>
+                      <option value="">三股东</option>
+                      <option value="">其他</option>
+                    </select>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业执照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <i>注：请上传企业执照</i>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业经营地址</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业门面</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业法人</label>
+                    <input class="input_xs" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人证件</label>
+                    <select>
+                      <option value="">居民身份证</option>
+                    </select>
+                    <input class="input_m" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人证件照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>法人联系方式</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业联系人</label>
+                    <input class="input_xs" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系人证件</label>
+                    <select>
+                      <option value="">居民身份证</option>
+                    </select>
+                    <input class="input_m" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系人证件照</label>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                    <span>
+                      <img src="img/idcard.jpg" />
+                      <input type="file" />
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>联系方式</label>
+                    <input class="input_l" type="text" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业开户行</label>
+                    <input class="input_l" type="text" placeholder="请输入企业开户行，具体到支行" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>企业开户帐号</label>
+                    <input class="input_l" type="text" placeholder="请输入卡号" />
+                  </div>
+                </li>
+                <li>
+                  <div class="status">
+                    <img src="img/doing.jpg" />
+                    未认证
+                  </div>
+                  <div class="formField">
+                    <label>近一年企业销售额/开票金额</label>
+                    <input class="input_xs" type="text" />
+                    <label>万元</label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sider">
+      <div class="message">
+        <span>系统消息</span>
+        由<strong>中国工商银行</strong>发行的最新个人贷款产品《小额企业贷》已经上线。
+        <a href="loandetail.html">点击查看详情</a>
+      </div>
+      <div class="calendar">
+        <h3>我的日历</h3>
+        <div class="date">
+          <span>07</span>
+          <p>星期三</p>
+          2018.11
+        </div>
+        <div class="latestProd">
+          <h6>最新产品</h6>
+          <ul>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="" alt="">
+                <p>经营贷</p>
+                20W | 4.2%
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 修改密码 -->
+  <div class="mask passwordModal">
+    <div class="modal">
+      <h3>修改密码<i></i></h3>
+      <div class="modalBody">
+        <ul class="formList">
+          <li><label>旧密码</label><input type="password" placeholder="请输入旧密码" /></li>
+          <li><label>新密码</label><input type="password" placeholder="请输入新密码" /></li>
+        </ul>
+      </div>
+      <a>确定</a>
+    </div>
+  </div>
+
+  <div class="footer_user">
+    <div class="copyright">Copyright 2018 ** All right reserved</div>
+  </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // 修改密码
+      $('.password').click(function() {
+        $('.passwordModal').show();
+        $('.passwordModal a').click(function() {
+          $('.passwordModal').hide();
+        });
+      });
+      $('.mask i').click(function() {
+        $('.mask').hide();
+      });
+
+      // 企业认证
+      $('.myloan h3').click(function() {
+        $('.enterprise .certification li.new').show();
+        $('.enterprise .certification li.new p:not(:last-child)').hide();
+        $('.enterprise .certification li.new p:last-child').show();
+        $('.enterprise .certification li.new ul').show();
+      });
+      $('.title a').click(function() {
+        var text = $(this).text();
+        switch ( text ) {
+          case '删除': {
+            var result = confirm('是否确认删除该条企业认证？');
+            if ( result ) {
+              $(this).parent().parent().parent().hide();
+            }
+            break;
+          }
+          case '修改': {
+            $(this).parent().hide();
+            $(this).parent().siblings('p').show();
+            $(this).parent().parent().siblings('ul').slideDown();
+            break;
+          }
+          case '返回': {
+            $(this).parent().hide();
+            $(this).parent().siblings('p').show();
+            if (!$(this).parent().parent().parent().hasClass('new')) {
+              $(this).parent().parent().siblings('ul').hide();
+            } else {
+              $(this).parent().parent().parent().hide();
+            }
+            break;
+          }
+          case '保存': {
+            $(this).parent().hide();
+            $(this).parent().siblings('p').show();
+            $(this).parent().parent().siblings('ul').hide();
+            break;
+          }
+          default: break;
+        }
+      });
+    });
+
+    // type="date" IE 兼容代码
+    webshims.setOptions('forms-ext', {
+      types: 'date',
+      date: {
+          startView: 2,
+          openOnMouseFocus: true
+        }
+    });
+    webshims.polyfill('forms forms-ext');
+  </script>
+</body>
+</html>
