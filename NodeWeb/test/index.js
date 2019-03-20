@@ -56,7 +56,66 @@ http.createServer(function(req, res) {
       if (pathName === '/login') { // 登录
 
         console.log("\n【API - 登录】");
-  
+        
+        result = JSON.parse(result);
+        const name = result.name;         // 用户名
+        const password = result.password; // 密码
+
+        if (!name) { // 用户名为空
+          res.end('登录失败，用户名为空！');
+          return;
+        } else if (!password) { // 密码为空
+          res.end('登录失败，密码为空！');
+          return;
+        } else if (name.length > 10) { // 用户名过长
+          res.end('登录失败，用户名过长！');
+          return;
+        } else if (password.length > 20) { // 密码过长
+          res.end('登录失败，密码过长！');
+          return;
+        } else {
+
+          // 新增的 SQL 语句及新增的字段信息
+          const readSql = "SELECT * FROM user WHERE name='" + name + "'";
+          // 连接 SQL 并实施语句
+          connection.query(readSql, function(error, response) {
+            if (error) { // 如果 SQL 语句错误
+              throw error;
+            } else {
+              if (!response || !response.length) { // 不存在用户
+                res.end('登录失败，用户不存在！');
+                return;
+              } else { // 存在用户
+                console.log("\n存在该用户");
+
+                let newRes = JSON.parse(JSON.stringify(response));
+                console.log(newRes);
+                
+                if (newRes[0].password === password) { // 密码正确
+                  // 返回数据
+                  res.write(JSON.stringify({
+                    code: '1',
+                    message: '登录成功！',
+                    data: {
+                      id: newRes[0].id,
+                      name: newRes[0].name
+                    }
+                  }));
+                } else { // 密码错误
+                  // 返回数据
+                  res.write(JSON.stringify({
+                    code: '0',
+                    message: '登录失败，密码错误！'
+                  }));
+                }
+                res.end();
+                // 判断密码正确与否完毕
+              }
+              // 存在用户处理完毕
+            }
+          });
+        }
+        // 登录步骤结束
       } else if (pathName === '/register') { // 注册
   
         console.log("\n【API - 注册】");
@@ -73,8 +132,8 @@ http.createServer(function(req, res) {
         } else if (!password) { // 密码为空
           res.end('注册失败，密码为空！');
           return;
-        } else if (name.length > 10) { // 姓名过长
-          res.end('注册失败，姓名过长！');
+        } else if (name.length > 10) { // 用户名过长
+          res.end('注册失败，用户名过长！');
           return;
         } else if (name.length > 10) { // 密码过长
           res.end('注册失败，密码过长！');
