@@ -79,7 +79,45 @@
       $('.register').click(function() {
         $('.registerModal').show();
         $('.registerModal a').click(function() {
-          $('.registerModal').hide();
+          var name = $('.registerModal input[type="text"]').val();
+          var password = $('.registerModal input[type="password"]').val();
+          if (!name) {
+            alert("请输入用户名");
+            $('.registerModal input[type="text"]').focus();
+          } else if (!password) {
+            alert("请输入密码");
+            $('.registerModal input[type="password"]').focus();
+          } else if (name.length > 10) {
+            alert("请输入少于 10 位的用户名");
+            $('.registerModal input[type="text"]').focus();
+          } else if (password.length > 20) {
+            alert("请输入少于 20 位的密码");
+            $('.registerModal input[type="password"]').focus();
+          } else {
+            // 如果用户输入的没问题，那就请求接口
+            $.ajax({
+              url: 'http://localhost:8888/register',
+              type: 'post',
+              dataType: 'json',
+              data: { name, password },
+              success(res) {
+                console.log('success', res);
+                if (res.code === "1") {
+                  alert("注册成功");
+                  window.location.reload();
+                }
+              },
+              error(err) {
+                console.log('err', err.responseText);
+                if (err.responseText) {
+                  alert(err.responseText);
+                } else {
+                  alert("未知错误");
+                }
+              }
+            })
+          }
+          // $('.registerModal').hide();
         });
       });
       $('.mask i').click(function() {

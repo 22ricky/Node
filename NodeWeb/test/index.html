@@ -7,17 +7,19 @@
   <title>演示代码</title>
 </head>
 <body>
-  <div>
-    <label for="user">用户名</label>
-    <input type="text" id="user" />
-  </div>
-  <div>
-    <label for="password">密&emsp;码</label>
-    <input type="password" id="password" />
-  </div>
-  <div>
-    <button id="register">注册</button> 
-  </div>
+  <form>
+    <div>
+      <label for="user">用户名</label>
+      <input type="text" id="user" />
+    </div>
+    <div>
+      <label for="password">密&emsp;码</label>
+      <input type="password" id="password" autocomplete="off" />
+    </div>
+    <div>
+      <button id="register">注册</button>
+    </div>
+  </form>
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
   <script>
     $(function() {
@@ -32,8 +34,9 @@
         }
       });
 
-      $('#register').click(function() {
+      $('#register').click(function(e) {
         // 测试 POST 接口
+        e.preventDefault();
         $.ajax({
           url: 'http://localhost:8888/register',
           type: 'POST',
