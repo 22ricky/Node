@@ -163,52 +163,57 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('.apply').click(function() {
-        var num = Math.ceil( Math.random() * 3 );
-        switch ( num ) {
-          case 1: {
-            $('.loginModal').show();
-            $('.loginModal a').click(function() {
-              $('.loginModal').hide();
-              window.location.href = 'login.html';
-            });
-            break;
-          }
-          case 2: {
-            $('.certModal').show();
+        const user = sessionStorage.getItem( 'user' );
+        const { id, name } = user ? JSON.parse( user ) : {};
+        const isLogin = id && name;
+        if ( !isLogin ) {
+          $('.loginModal').show();
+          $('.loginModal a').click(function() {
+            $('.loginModal').hide();
+            window.location.href = 'login.html';
+          });
+        } else {
+          var num = Math.ceil( Math.random() * 2 );
+          switch ( num ) {
+            case 1: {
+              $('.certModal').show();
 
-            // 认证初始化
-            $('.confirm').hide();
-            if ($('.companyList').css('display') === 'block') {
-              $('.certModal .modalBody p').show();
-              $('.companyList').hide();
-              $('.cert').show();
+              // 认证初始化
               $('.confirm').hide();
+              if ($('.companyList').css('display') === 'block') {
+                $('.certModal .modalBody p').show();
+                $('.companyList').hide();
+                $('.cert').show();
+                $('.confirm').hide();
+              }
+
+              // 认证
+              $('.cert').click(function() {
+                $('.certModal .modalBody p').hide();
+                $(this).hide();
+                $('.companyList').show();
+                $('.confirm').show();
+              });
+
+              // 确定
+              $('.confirm').click(function() {
+                $('.certModal').hide();
+                window.location.href = 'certification.html';
+              });
+              break;
             }
-
-            // 认证
-            $('.cert').click(function() {
-              $('.certModal .modalBody p').hide();
-              $(this).hide();
-              $('.companyList').show();
-              $('.confirm').show();
-            });
-
-            // 确定
-            $('.confirm').click(function() {
-              $('.certModal').hide();
-              window.location.href = 'certification.html';
-            });
-            break;
+            case 2: {
+              $('.applyModal').show();
+              $('.applyModal a').click(function() {
+                $('.applyModal').hide();
+              });
+              break;
+            }
+            default: break;
           }
-          case 3: {
-            $('.applyModal').show();
-            $('.applyModal a').click(function() {
-              $('.applyModal').hide();
-            });
-            break;
-          }
-          default: break;
         }
+
+        // 关闭弹窗
         $('.mask i').click(function() {
           $('.mask').hide();
         });

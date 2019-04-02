@@ -150,8 +150,7 @@
             success(res) {
               console.log('success', res);
               if (res.code === '1') {
-                sessionStorage.setItem('id', res.data.id);
-                sessionStorage.setItem('name', res.data.name);
+                sessionStorage.setItem( 'user', JSON.stringify( res.data )); 
                 alert("登录成功！");
                 window.location.href = './user.html';
               } else if (res.code === '0') {

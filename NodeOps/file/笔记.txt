@@ -1,0 +1,112 @@
+------WebKitFormBoundarySp9dW0tz5NKo6tzk
+Content-Disposition: form-data; name="user"
+
+aaa
+------WebKitFormBoundarySp9dW0tz5NKo6tzk
+Content-Disposition: form-data; name="password"
+
+123456
+------WebKitFormBoundarySp9dW0tz5NKo6tzk
+Content-Disposition: form-data; name="f1"; filename="a.txt"
+Content-Type: text/plain
+
+aaa
+bbb
+cccccc
+------WebKitFormBoundarySp9dW0tz5NKo6tzk--
+
+--------------------------------------------------------------------------------
+
+<分隔符>
+Content-Disposition: form-data; name="user"
+
+aaa
+<分隔符>
+Content-Disposition: form-data; name="password"
+
+123456
+<分隔符>
+Content-Disposition: form-data; name="f1"; filename="a.txt"
+Content-Type: text/plain
+
+aaa
+bbb
+cccccc
+<分隔符>--
+
+--------------------------------------------------------------------------------
+
+<分隔符>\r\n
+Content-Disposition: form-data; name="user"\r\n
+\r\n
+aaa\r\n
+<分隔符>\r\n
+Content-Disposition: form-data; name="password"\r\n
+\r\n
+123456\r\n
+<分隔符>\r\n
+Content-Disposition: form-data; name="f1"; filename="a.txt"\r\n
+Content-Type: text/plain\r\n
+\r\n
+<文件内容>\r\n
+<分隔符>--
+
+--------------------------------------------------------------------------------
+
+<分隔符>\r\n数据描述\r\n\r\n数据值\r\n
+<分隔符>\r\n数据描述\r\n\r\n数据值\r\n
+<分隔符>\r\n数据描述1\r\n数据描述2\r\n\r\n<文件内容>\r\n
+<分隔符>--
+
+--------------------------------------------------------------------------------
+
+解析数据：
+
+1.用"<分隔符>"切开数据
+
+[
+  空,
+  \r\n数据描述\r\n\r\n数据值\r\n,
+  \r\n数据描述\r\n\r\n数据值\r\n,
+  \r\n数据描述1\r\n数据描述2\r\n\r\n<文件内容>\r\n,
+  --
+]
+
+2.丢弃头尾元素
+
+[
+  \r\n数据描述\r\n\r\n数据值\r\n,
+  \r\n数据描述\r\n\r\n数据值\r\n,
+  \r\n数据描述1\r\n数据描述2\r\n\r\n<文件内容>\r\n,
+]
+
+3.丢弃每一项的头尾"\r\n"
+
+[
+  数据描述\r\n\r\n数据值,
+  数据描述\r\n\r\n数据值,
+  数据描述1\r\n数据描述2\r\n\r\n<文件内容>,
+]
+
+4.用第一次出现的"\r\n\r\n"切分数据
+
+  普通数据：[数据描述,数据值]
+  或
+  文件数据：[数据描述1\r\n数据描述2,<文件内容>]
+
+5.判断数据描述里有没有"\r\n"
+
+  有  --文件数据：[数据描述1\r\n数据描述2,<文件内容>]
+  没有--普通数据：[数据描述,数据值]
+
+6.分析"数据描述"
+
+--------------------------------------------------------------------------------
+
+对Buffer数据进行：
+1.查找         indexOf()
+2.截取         slice(s, e)      [s, ..., e-1]
+               slice(s)
+3.切分         split
+
+--------------------------------------------------------------------------------
