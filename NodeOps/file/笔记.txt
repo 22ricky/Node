@@ -110,3 +110,8 @@ Content-Type: text/plain\r\n
 3.切分         split
 
 --------------------------------------------------------------------------------
+
+流：
+1.读取流       createReadStream  req
+2.写入流       createWriteStream res
+3.读写流       压缩、加密
