@@ -1,0 +1,9 @@
+第一重要、缓存策略：
+cache-control
+expires
+
+第二重要、缓存实现过程：
+1.第一次S->C: "Last-Modified: Sat, 13 Apr 2019 03:04:00 GMT"
+2.第二次C->S: "If-Modified-Since: Sat, 13 Apr 2019 03:04:00 GMT"
+3.第二次S->C: 200 || 304
+
