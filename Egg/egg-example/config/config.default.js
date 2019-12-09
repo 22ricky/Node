@@ -15,8 +15,31 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1575556969307_3757';
 
+  // add your view config here
+  config.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.tpl': 'nunjucks',
+    },
+  };
+
+  // add your news config here
+  config.news = {
+    pageSize: 5,
+    serverUrl: 'https://hacker-news.firebaseio.com/v0',
+  };
+
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [
+    'robot',
+  ];
+
+  config.robot = {
+    ua: [
+      /curl/i,
+      /Baiduspider/i,
+    ],
+  };
 
   // add your user config here
   const userConfig = {
