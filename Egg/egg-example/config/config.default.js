@@ -2,6 +2,9 @@
 
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
+
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -13,13 +16,18 @@ module.exports = appInfo => {
   const config = exports = {};
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1575556969307_3757';
+  config.keys = appInfo.name + '123456';
+
+  config.siteFile = {
+    '/favicon.ico': fs.readFileSync(path.join(appInfo.baseDir, 'app/public/favicon.png')),
+  };
 
   // add your view config here
   config.view = {
     defaultViewEngine: 'nunjucks',
     mapping: {
       '.tpl': 'nunjucks',
+      '.nj': 'nunjucks',
     },
   };
 

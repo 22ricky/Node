@@ -1,16 +1,17 @@
-<html>
-  <head>
-    <title>Hacker News</title>
-    <link rel="stylesheet" href="/public/css/news.css" />
-  </head>
-  <body>
-    <ul class="news-view view">
-      {% for item in list %}
-        <li class="item">
-          <a href="{{ item.url }}">{{ item.title }}</a>
-          {{ helper.relativeTime(item.time) }}
-        </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% extends "../layout/layout.tpl" %}
+
+{% block content %}
+  <div class="news-view view v-transition">
+    {% for item in list %}
+      {% set index = ((page-1) * pageSize + loop.index) %}
+      {% include "./item.tpl" %}
+    {% endfor %}
+
+    <div class="nav">
+      {% if page > 1 %}
+        <a href="/news?page={{ page - 1 }}">&lt; prev</a>
+      {% endif %}
+        <a href="/news?page={{ page + 1 }}">more...</a>
+    </div>
+  </div>
+{% endblock %}
