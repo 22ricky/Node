@@ -9,6 +9,12 @@ class HomeController extends Controller {
     ctx.body = result;
   }
 
+  async type() {
+    const { ctx, app } = this;
+    const data = await app.mysql.select('type');
+    ctx.body = data;
+  }
+
   async list() {
     const { ctx, app } = this;
     const sql = 'SELECT article.id as id,' +
@@ -19,12 +25,27 @@ class HomeController extends Controller {
                 'type.typeName as typeName ' +
                 'FROM article LEFT JOIN type ON article.type_id = type.id';
     const data = await app.mysql.query(sql);
-    ctx.body = { data };
+    ctx.body = data;
+  }
+
+  async getListById() {
+    const { ctx, app } = this;
+    const { id } = ctx.params;
+    const sql = 'SELECT article.id as id,' +
+                'article.title as title,' +
+                'article.introduce as introduce,' +
+                'article.view_count as view_count,' +
+                'FROM_UNIXTIME(article.addTime, "%Y-%m-%d") as addTime,' +
+                'type.typeName as typeName ' +
+                'FROM article LEFT JOIN type ON article.type_id = type.id ' +
+                'WHERE article.type_id = ' + id;
+    const data = await app.mysql.query(sql);
+    ctx.body = data;
   }
 
   async detail() {
     const { ctx, app } = this;
-    const id = ctx.params.id;
+    const { id } = ctx.params;
     const sql = 'SELECT article.id as id,' +
                 'article.title as title,' +
                 'article.introduce as introduce,' +
@@ -36,7 +57,7 @@ class HomeController extends Controller {
                 'FROM article LEFT JOIN type ON article.type_id = type.id ' +
                 'WHERE article.id = ' + id;
     const data = await app.mysql.query(sql);
-    ctx.body = { data };
+    ctx.body = data;
   }
 }
 
